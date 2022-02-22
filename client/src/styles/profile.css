@@ -1,0 +1,40 @@
+.profile_avatar{
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid #FFF;
+    cursor: pointer;
+}
+.profile_avatar img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.profile_avatar span{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    font-size: 1rem;
+    color: #0d6efd;
+    transition: 0.25s ease-in-out;
+    background: #fff5;
+}
+.profile_avatar:hover span{
+    bottom: -15%;
+}
+.profile_avatar #file_up{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}

@@ -1,0 +1,27 @@
+img.header_image {
+    object-fit: cover;
+    height: 400px;
+}
+.carousel-caption h5,
+.carousel-caption h2{
+    margin: 10px;
+    color: #FFF;
+    text-shadow: 2px 2px 8px #000000;
+}
+.carousel-caption{
+    background-color: #0000006b;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 5px;
+    transform: translateY(-40%);
+}
+.card_icon_function{
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+.icon_function{
+    display: block;
+    margin: 20px auto;
+    max-height: 150px;
+}

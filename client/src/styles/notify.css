@@ -1,0 +1,5 @@
+img.notify_avatar{
+    display: flex;
+    max-height: 50px;
+    margin: 10px
+}

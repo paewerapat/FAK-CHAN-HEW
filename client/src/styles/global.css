@@ -1,0 +1,52 @@
+*{
+    font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+form .pass{
+    position: relative;
+}
+form .cf_pass{
+    position: relative;
+}
+
+form .pass small{
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+form .cf_pass small{
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+/* ----------------Product----------------- */
+@import url('product.css');
+
+/* ----------------Home----------------- */
+@import url('home.css');
+
+/* ----------------Profile----------------- */
+@import url('profile.css');
+
+/* ----------------Map Reaflet--------------- */
+@import url("~leaflet/dist/leaflet.css");
+
+.leaflet-container {
+    width: 100%;
+}
+
+
+/* ----------------Notification--------------- */
+@import url("notify.css");
+
+/* ----------------Member--------------- */
+@import url("member.css");
