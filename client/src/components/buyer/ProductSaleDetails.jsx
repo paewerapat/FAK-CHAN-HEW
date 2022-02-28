@@ -6,7 +6,7 @@ import moment from 'moment'
 import { addOrderBuyProduct } from '../../redux/actions/orderAction'
 import { GLOBALTYPES } from '../../redux/actions/globalTypes'
 import { getDataAPI } from '../../utils/fetchData'
-import { addCart, updateCart } from '../../redux/actions/cartAction'
+import { addCart, addNewCart } from '../../redux/actions/cartAction'
 
 
 const SaleProductDetails = () => {
@@ -71,23 +71,23 @@ const SaleProductDetails = () => {
         if(auth.user){
             if(quantity){
                 if(quantity <= saleDetails.inventories){
-                    const values = [
-                        {
-                            seller_id: saleDetails.seller_id,
-                            details: [
-                                {
-                                    ...orderData,
-                                    price: saleDetails.price, 
-                                    images: JSON.parse(saleDetails.images)[0].url
-                                }
-                            ]
-                        }
-                    ]
+                    const values = {
+                        seller_id: saleDetails.seller_id,
+                        details: [
+                            {
+                                ...orderData,
+                                salename: saleDetails.salename,
+                                price: saleDetails.price, 
+                                images: JSON.parse(saleDetails.images)[0].url
+                            }
+                        ]
+                    }
+                    
                     if(cart.myCart !== null && cart.myCart.length > 0) {
-                        dispatch(updateCart({values, auth}))
+                        dispatch(addCart({values, cart, auth}))
                         setOrderData(initialState)
                     } else {
-                        dispatch(addCart({values, auth}))
+                        dispatch(addNewCart({values, auth}))
                         setOrderData(initialState)
                     }
                 } else {

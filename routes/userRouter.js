@@ -9,7 +9,7 @@ router.patch('/all-members', auth, manager, userCtrl.updateMembers)
 
 router.get("/profile-user/:id", auth, userCtrl.getProfileUser)
 
-router.post("/cart", auth, userCtrl.updateMyCart);
+router.put("/cart", auth, userCtrl.updateMyCart);
 
 router.get("/cart", auth, userCtrl.getMyCart);
 

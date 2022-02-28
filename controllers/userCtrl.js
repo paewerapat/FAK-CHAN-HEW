@@ -66,7 +66,10 @@ const userCtrl = {
             (err, result) => {
                 if(err) throw err;
                 result = JSON.parse(JSON.stringify(result))[0];
-                res.status(200).json({cart: JSON.parse(result.cart)});
+                if(result.cart !== null && result.cart.length > 0) {
+                    result.cart = JSON.parse(result.cart)
+                    return res.status(200).json({cart: result.cart});
+                }
             })
         } catch (err) {
             return res.status(500).json({msg: err.message})
@@ -78,7 +81,7 @@ const userCtrl = {
             await sql.query(`UPDATE villagers SET cart = '${values}' WHERE villagers_id = ${req.user.villagers_id}`,
             (err) => {
                 if(err) throw err;
-                return res.status(200).json({msg: 'เพิ่มสินค้าลงในตะกร้าเรียบร้อยแล้ว!'})
+                return res.status(200).json({msg: 'อัพเดทตะกร้าเรียบร้อยแล้ว!'})
             })
         } catch (err) {
             return res.status(500).json({msg: err.message})

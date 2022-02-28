@@ -15,6 +15,7 @@ export const login = (data) => async (dispatch) => {
             }
         })
         localStorage.setItem("authToken", res.data.token)
+        window.location.reload();
         dispatch({
             type: GLOBALTYPES.ALERT,
             payload: {

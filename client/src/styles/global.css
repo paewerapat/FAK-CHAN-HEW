@@ -44,9 +44,11 @@ form .cf_pass small{
     width: 100%;
 }
 
-
 /* ----------------Notification--------------- */
 @import url("notify.css");
 
 /* ----------------Member--------------- */
 @import url("member.css");
+
+/* ----------------Cart--------------- */
+@import url("cart.css");
